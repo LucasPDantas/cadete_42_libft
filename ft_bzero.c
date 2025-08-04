@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 17:32:41 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/04 18:24:02 by luvences         ###   ########.fr       */
+/*   Created: 2025/07/24 19:39:23 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/04 14:18:54 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_bzero(void *s, size_t n)
 {
-    if
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)s)[i] = '\0';
+		i++;
+	}
 }
+
+#include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	test[] = "hojes";
+
+// 	ft_bzero(test, 2);
+// 	for (int i = 0; i < 6; i++)
+//     printf("[%c]\n", test[i]);
+
+// 	return (0);
+// }

@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 17:32:41 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/04 18:24:02 by luvences         ###   ########.fr       */
+/*   Created: 2025/07/22 17:36:22 by luvences          #+#    #+#             */
+/*   Updated: 2025/07/24 12:00:30 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+size_t	ft_strlen(const char *s)
 {
-    if
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	size_n[] = "testando";
+
+// 	printf("%ld\n", ft_strlen(size_n));
+// }

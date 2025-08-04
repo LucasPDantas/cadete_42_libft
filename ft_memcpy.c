@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 17:32:41 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/04 18:24:02 by luvences         ###   ########.fr       */
+/*   Created: 2025/07/24 20:40:13 by luvences          #+#    #+#             */
+/*   Updated: 2025/07/29 19:37:19 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    if
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dest);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	src[] = "hello";
+// 	char	dest[5];
+
+// 	ft_memcpy(dest, src, 3);
+// 	dest[3] = '\0';
+// 	printf("copia: %s\n", dest);
+// }
