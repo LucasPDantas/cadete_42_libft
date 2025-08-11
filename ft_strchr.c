@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 17:32:41 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/11 18:14:01 by luvences         ###   ########.fr       */
+/*   Created: 2025/08/04 19:54:30 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/04 22:17:57 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	c;
+// 	char	*s;
+// 	int		c;
 
-// 	c = 'a';
-// 	printf("%c\n", ft_toupper(c));
+// 	s = "banana";
+// 	c = 'n';
+// 	printf("%s\n", ft_strchr(s, c));
 // }

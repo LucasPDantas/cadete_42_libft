@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 17:32:41 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/11 18:14:01 by luvences         ###   ########.fr       */
+/*   Created: 2025/08/04 22:55:20 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/05 00:01:42 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+    int i;
+    
+    i = 0;
+    if (s1 != s2)
+    {
+        return (s1[i] - s2[i]);
+    }
+    
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	c;
-
-// 	c = 'a';
-// 	printf("%c\n", ft_toupper(c));
-// }
