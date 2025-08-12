@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 13:27:50 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/01 15:57:15 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/11 19:31:05 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (size_len);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char	src[] = "hello world42";
-	char	dest[14];
-	size_t	i;
+// int	main(void)
+// {
+// 	char	src[] = "hello world42";
+// 	char	dest[14];
+// 	size_t	i;
 
-	// memset(dest, 'A', 10);
-	i = ft_strlcpy(dest, src, 0);
-	printf("cópia: %s\n", dest);
-	printf("tamanho de size_t é -> %zu\n", i);
-	i = strlcpy(dest, src, 0);
-	printf("cópia: %s\n", dest);
-	printf("tamanho de size_t é -> %zu\n", i);
-}
+// 	// memset(dest, 'A', 10);
+// 	i = ft_strlcpy(dest, src, 0);
+// 	printf("cópia: %s\n", dest);
+// 	printf("tamanho de size_t é -> %zu\n", i);
+// 	i = strlcpy(dest, src, 0);
+// 	printf("cópia: %s\n", dest);
+// 	printf("tamanho de size_t é -> %zu\n", i);
+// }
