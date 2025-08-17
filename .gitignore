@@ -2,3 +2,4 @@ libft_test/
 libft.a
 *.o
 a.out
+.vscode/
