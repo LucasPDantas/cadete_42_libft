@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 14:31:25 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/04 17:10:20 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/19 16:07:53 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	src_len = ft_strlen(src);
 	if (size == 0 || dst_len >= size)
 		return (size + src_len);
-    if (size > dst_len)
-        space = size - dst_len - 1;
-    else
-    {
-        space = 0;
-    }
+	if (size > dst_len)
+		space = size - dst_len - 1;
+	else
+	{
+		space = 0;
+	}
 	while (src[i] != '\0' && space > 0)
 	{
 		dst[dst_len + i] = src[i];
@@ -41,16 +41,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (dst_len + src_len);
 }
 
-#include <stdio.h>
-int main(void)
-{
-    char dest[50] = "world";
-    const char *src = " hello";
-    size_t result;
+// #include <stdio.h>
 
-    result = ft_strlcat(dest, src, 11);
+// int	main(void)
+// {
+// 	char		dest[50] = "world";
+// 	const char	*src = " hello";
+// 	size_t		result;
 
-    printf("resultado: %zu\n", result);
-    printf("destino final: \"%s\"\n", dest);
-    return (0);
-}
+// 	result = ft_strlcat(dest, src, 11);
+// 	printf("resultado: %zu\n", result);
+// 	printf("destino final: \"%s\"\n", dest);
+// 	return (0);
+// }
