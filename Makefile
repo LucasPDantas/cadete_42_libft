@@ -24,7 +24,8 @@ functions = ft_isalpha.c\
 			ft_strncmp.c\
 			ft_memchr.c\
 			ft_strnstr.c\
-			ft_calloc.c
+			ft_calloc.c\
+			ft_strdup.c
 
 objects = $(functions:.c=.o)
 
