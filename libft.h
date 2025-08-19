@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:06:38 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:17:39 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/19 17:04:00 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <bsd/string.h>
 # include <stddef.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <string.h>
 
