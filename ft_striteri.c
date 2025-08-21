@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 20:40:13 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/20 19:20:38 by luvences         ###   ########.fr       */
+/*   Created: 2025/08/20 18:29:03 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/20 18:33:52 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		f(i, &s[i]);
 		i++;
 	}
-	return (dest);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	src[] = "hello";
-// 	char	dest[5];
-
-// 	ft_memcpy(dest, src, 3);
-// 	dest[3] = '\0';
-// 	printf("copia: %s\n", dest);
-// }

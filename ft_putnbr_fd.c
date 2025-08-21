@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 20:40:13 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/20 19:20:38 by luvences         ###   ########.fr       */
+/*   Created: 2025/08/20 18:53:58 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/20 18:54:06 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	long	num;
+	char	c;
 
-	i = 0;
-	while (i < n)
+	if (fd < 0)
+		return ;
+	num = n;
+	if (num < 0)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
+		write(fd, "-", 1);
+		num = -num;
 	}
-	return (dest);
+	if (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	c = (char)((num % 10) + '0');
+	write(fd, &c, 1);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	src[] = "hello";
-// 	char	dest[5];
-
-// 	ft_memcpy(dest, src, 3);
-// 	dest[3] = '\0';
-// 	printf("copia: %s\n", dest);
-// }

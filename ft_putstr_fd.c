@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 20:40:13 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/20 19:20:38 by luvences         ###   ########.fr       */
+/*   Created: 2025/08/20 18:42:33 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/20 18:43:09 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dest);
+	if (!s || fd < 0)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	src[] = "hello";
-// 	char	dest[5];
-
-// 	ft_memcpy(dest, src, 3);
-// 	dest[3] = '\0';
-// 	printf("copia: %s\n", dest);
-// }

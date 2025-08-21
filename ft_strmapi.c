@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 20:40:13 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/20 19:20:38 by luvences         ###   ########.fr       */
+/*   Created: 2025/08/20 18:27:05 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/20 18:27:31 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
+	size_t	len;
+	char	*out;
 
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	out = (char *)malloc(len + 1);
+	if (!out)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		out[i] = f((unsigned int)i, s[i]);
 		i++;
 	}
-	return (dest);
+	out[len] = '\0';
+	return (out);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	src[] = "hello";
-// 	char	dest[5];
-
-// 	ft_memcpy(dest, src, 3);
-// 	dest[3] = '\0';
-// 	printf("copia: %s\n", dest);
-// }

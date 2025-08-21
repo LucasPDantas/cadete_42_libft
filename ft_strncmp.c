@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 22:55:20 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:08:06 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:17:47 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && i < n)
+	while (s1[i] == s2[i] && i < n && s1[i] != '\0')
 		i++;
 	if (i == n)
 		return (0);
