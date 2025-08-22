@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 19:39:23 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:05:56 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/20 22:36:12 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-#include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	test[] = "hojes";
-
-// 	ft_bzero(test, 2);
-// 	for (int i = 0; i < 6; i++)
-//     printf("[%c]\n", test[i]);
-
-// 	return (0);
-// }

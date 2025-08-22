@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:23:50 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:08:33 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:17:39 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,3 @@ int	ft_tolower(int c)
 	else
 		return (c);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	c;
-
-// 	c = '2';
-// 	printf("%c\n", ft_tolower(c));
-// }

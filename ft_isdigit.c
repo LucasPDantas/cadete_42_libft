@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 10:29:34 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:06:13 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:13:22 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,3 @@ int	ft_isdigit(int c)
 	}
 	return (0);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	int	number;
-
-// 	number = '1';
-// 	if (ft_isdigit(number))
-// 	{
-// 		printf("é um número\n");
-// 	}
-// 	else
-// 		printf("não é um número\n");
-// }

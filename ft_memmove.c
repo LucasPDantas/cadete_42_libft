@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:42:13 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:07:08 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:14:31 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-//#include <stdio.h>
-// int	main(void)
-// {
-// 	char	*src;
-// 	char	*dest;
-
-// 	src = "uva";
-// 	dest = "abacaxi";
-// 	printf("%s", ft_memmove(&src, &dest, 10));
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 16:43:51 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/20 16:43:54 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:12:13 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, total);
 	return (ptr);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	int	i;
-// 	int	*v1;
-// 	int	*v2;
-
-// 	// malloc -> só aloca (valores indefinidos, "lixo")
-// 	v1 = malloc(5 * sizeof(int));
-// 	// calloc -> aloca e zera
-// 	v2 = calloc(5, sizeof(int));
-// 	printf("=== malloc ===\n");
-// 	for (i = 0; i < 5; i++)
-// 		printf("v1[%d] = %d\n", i, v1[i]); // pode imprimir valores aleatórios
-// 	printf("\n=== calloc ===\n");
-// 	for (i = 0; i < 5; i++)
-// 		printf("v2[%d] = %d\n", i, v2[i]); // todos começam como 0
-// 	// sempre liberar a memória alocada
-// 	free(v1);
-// 	free(v2);
-// 	return (0);
-// }

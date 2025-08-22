@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 10:13:42 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:05:51 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/20 21:29:39 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (number * signal);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d\n", ft_atoi("42"));
-// 	printf("%d\n", ft_atoi("    -42"));
-// 	printf("%d\n", ft_atoi("  +-+54"));
-// 	printf("%d\n", ft_atoi("0"));
-// 	printf("%d\n", ft_atoi("abc"));
-// 	printf("%d\n", ft_atoi("2147483647"));
-// 	return (0);
-// }

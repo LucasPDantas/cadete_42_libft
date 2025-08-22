@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 14:31:25 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:07:53 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:16:11 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char		dest[50] = "world";
-// 	const char	*src = " hello";
-// 	size_t		result;
-
-// 	result = ft_strlcat(dest, src, 11);
-// 	printf("resultado: %zu\n", result);
-// 	printf("destino final: \"%s\"\n", dest);
-// 	return (0);
-// }

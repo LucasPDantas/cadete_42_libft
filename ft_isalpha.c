@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:27:54 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:06:05 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:12:57 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,4 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	test;
-
-// 	test = 'R';
-// 	// ft_isapha(test);
-// 	// printf("%c é um caracter", ft_isapha);
-// 	if (ft_isapha(test))
-// 	{
-// 		printf("é uma letra\n");
-// 	}
-// 	else
-// 		printf("não é letra\n");
-// }
+																										

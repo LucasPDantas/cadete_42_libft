@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 22:05:01 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:08:28 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:17:17 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	*s;
-// 	int		c;
-
-// 	s = "banana";
-// 	c = 'b';
-// 	printf("%s\n", ft_strrchr(s, c));
-// }

@@ -3,3 +3,4 @@ libft.a
 *.o
 a.out
 .vscode/
+main.c

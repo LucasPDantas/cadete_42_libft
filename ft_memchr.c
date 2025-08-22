@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 16:44:10 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/20 16:44:14 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:13:43 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// #include <stddef.h>
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	const char	*s = "t\0\0este";
-// 	int			c;
-// 	size_t		n;
-// 	void		*p;
-
-// 	c = 'e';
-// 	n = 5;
-// 	p = ft_memchr(s, c, n);
-// 	printf("endereço inicial do array: %p\n", s);
-// 	printf("endereço onde 'c' foi encontrado: %p\n", p);
-// 	if (p)
-// 	{
-// 		printf("offset = %td\n", (const char *)p - s);
-// 	}
-// 	else
-// 		printf("NULL\n");
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:36:22 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/19 16:08:03 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:16:38 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	size_n[] = "testando";
-
-// 	printf("%ld\n", ft_strlen(size_n));
-// }
