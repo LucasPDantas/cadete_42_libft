@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:35:02 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/20 17:57:46 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 17:19:02 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,74 +30,67 @@ size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-int	fill_split(char **tab, char const *s, char const c, size_t words)
+int	fill_split(char **list, char const *s, char const c, size_t words)
 {
 	size_t	i;
-	size_t	k;
 	size_t	len;
 
 	i = 0;
-	k = 0;
-	while (*s && k < words)
+	while (*s && i < words)
 	{
 		while (*s && *s == c)
 			s++;
 		len = 0;
 		while (s[len] && s[len] != c)
 			len++;
-		tab[k] = ft_substr(s, 0, len);
-		if (!tab[k++])
+		list[i] = ft_substr(s, 0, len);
+		if (!list[i++])
 		{
-			while (k > 0)
-				free(tab[--k]);
-			free(tab);
+			while (i > 0)
+				free(list[--i]);
+			free(list);
 			return (0);
 		}
 		s += len;
 	}
-	tab[k] = NULL;
 	return (1);
 }
 
-char	**split_zero_delim(char const *s)
+char	**split_zero_delimiter(char const *s)
 {
-	char	**tab;
+	char	**list;
 
 	if (*s == '\0')
 	{
-		tab = (char **)malloc(sizeof(char *) * 1);
-		if (!tab)
-			return (NULL);
-		tab[0] = NULL;
-		return (tab);
+		list = (char **)ft_calloc(1, sizeof(char *));
+		return (list);
 	}
-	tab = (char **)malloc(sizeof(char *) * 2);
-	if (!tab)
+	list = (char **)ft_calloc(2, sizeof(char *));
+	if (!list)
 		return (NULL);
-	tab[0] = ft_strdup(s);
-	if (!tab[0])
+	list[0] = ft_strdup(s);
+	if (!list[0])
 	{
-		free(tab);
+		free(list);
 		return (NULL);
 	}
-	tab[1] = NULL;
-	return (tab);
+	return (list);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	words;
-	char	**tab;
+	char	**list;
 
 	if (!s)
 		return (NULL);
 	if (c == '\0')
-		return (split_zero_delim(s));
+		return (split_zero_delimiter(s));
 	words = count_words(s, c);
-	tab = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!tab)
+	list = (char **)ft_calloc(words + 1, sizeof(char *));
+	if (!list)
 		return (NULL);
-	if (!fill_split(tab, s, c, words))
+	if (!fill_split(list, s, c, words))
 		return (NULL);
-	return (tab);
+	return (list);
 }

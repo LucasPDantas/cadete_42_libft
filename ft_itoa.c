@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 18:01:22 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/22 10:06:32 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:37:37 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,25 @@ int	count_digits(long num)
 char	*ft_itoa(int n)
 {
 	long	num;
-	int		is_neg;
+	int		is_negative;
 	int		len;
 	char	*str;
 
 	num = n;
-	is_neg = (num < 0);
-	if (is_neg)
+	is_negative = (num < 0);
+	if (is_negative)
 		num = -num;
 	len = count_digits(num);
-	str = (char *)malloc(len + is_neg + 1);
+	str = (char *)malloc(len + is_negative + 1);
 	if (!str)
 		return (NULL);
-	str[len + is_neg] = '\0';
+	str[len + is_negative] = '\0';
 	while (len--)
 	{
-		str[len + is_neg] = (char)((num % 10) + '0');
+		str[len + is_negative] = (char)((num % 10) + '0');
 		num /= 10;
 	}
-	if (is_neg)
+	if (is_negative)
 		str[0] = '-';
 	return (str);
 }
