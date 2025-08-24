@@ -6,13 +6,13 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 18:01:22 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/22 10:37:37 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/24 18:02:37 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_digits(long num)
+static int	count_digits(long num)
 {
 	int	len;
 
