@@ -6,7 +6,7 @@
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:44:05 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/24 22:33:09 by luvences         ###   ########.fr       */
+/*   Updated: 2025/08/25 14:21:02 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ static int	split_aux(char const *string, char delimiter, char **list_address,
 	return (0);
 }
 
-static void	free_split(char ***list_address)
+static void	free_split(char **list_address)
 {
-	char	**ptr;
+	int	i;
 
-	ptr = *list_address;
-	while (*ptr)
+	i = 0;
+	while (list_address[i])
 	{
-		free(*ptr++);
+		free(list_address[i++]);
 	}
-	free(*list_address);
+	free(list_address);
 }
 
 char	**ft_split(char const *s, char c)
@@ -83,28 +83,7 @@ char	**ft_split(char const *s, char c)
 	}
 	if (split_aux(s, c, list_address, words))
 	{
-		free_split(&list_address);
+		free_split(list_address);
 	}
 	return (list_address);
 }
-// 0        1
-// ["hello", "world"]
-// #include <unistd.h>
-
-// int	main(void)
-// {
-// 	char **splir = ft_split("lorem", ' ');
-// 	int i = 0;
-// 	while (i < 1)
-// 	{
-// 		char *ptr = splir[i]; //"wold"
-// 		// ft_putstr_fd(splir[i], 1)
-// 		while (*ptr)
-// 		{
-// 			write(1, ptr++, 1);
-// 		}
-// 		write(1, "\n", 1);
-// 		i++;
-// 	}
-// 	free_split(&splir);
-// }
