@@ -5,92 +5,106 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luvences <luvences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 17:35:02 by luvences          #+#    #+#             */
-/*   Updated: 2025/08/22 17:19:02 by luvences         ###   ########.fr       */
+/*   Created: 2025/08/24 16:44:05 by luvences          #+#    #+#             */
+/*   Updated: 2025/08/24 22:33:09 by luvences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char c)
+static int	count_words(char const *string, char delimiter)
 {
-	size_t	count;
+	int	cw;
 
-	count = 0;
-	while (*s)
+	cw = 0;
+	while (*string != '\0')
 	{
-		while (*s && *s == c)
-			s++;
-		if (!*s)
-			break ;
-		count++;
-		while (*s && *s != c)
-			s++;
+		if (*string != delimiter && (*(string + 1) == delimiter || *(string
+					+ 1) == '\0'))
+		{
+			cw++;
+		}
+		string++;
 	}
-	return (count);
+	return (cw);
 }
 
-int	fill_split(char **list, char const *s, char const c, size_t words)
+static int	split_aux(char const *string, char delimiter, char **list_address,
+		int words)
 {
-	size_t	i;
-	size_t	len;
+	int	i;
 
 	i = 0;
-	while (*s && i < words)
+	while (words > 0)
 	{
-		while (*s && *s == c)
-			s++;
-		len = 0;
-		while (s[len] && s[len] != c)
-			len++;
-		list[i] = ft_substr(s, 0, len);
-		if (!list[i++])
+		while (*string == delimiter && *string != '\0')
 		{
-			while (i > 0)
-				free(list[--i]);
-			free(list);
-			return (0);
+			string++;
 		}
-		s += len;
+		while (string[i] != delimiter && string[i] != '\0')
+		{
+			i++;
+		}
+		*list_address = ft_substr(string, 0, i);
+		if (!*list_address)
+		{
+			return (1);
+		}
+		words--;
+		list_address++;
+		string += i;
+		i = 0;
 	}
-	return (1);
+	return (0);
 }
 
-char	**split_zero_delimiter(char const *s)
+static void	free_split(char ***list_address)
 {
-	char	**list;
+	char	**ptr;
 
-	if (*s == '\0')
+	ptr = *list_address;
+	while (*ptr)
 	{
-		list = (char **)ft_calloc(1, sizeof(char *));
-		return (list);
+		free(*ptr++);
 	}
-	list = (char **)ft_calloc(2, sizeof(char *));
-	if (!list)
-		return (NULL);
-	list[0] = ft_strdup(s);
-	if (!list[0])
-	{
-		free(list);
-		return (NULL);
-	}
-	return (list);
+	free(*list_address);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	words;
-	char	**list;
+	char	**list_address;
+	int		words;
 
-	if (!s)
-		return (NULL);
-	if (c == '\0')
-		return (split_zero_delimiter(s));
 	words = count_words(s, c);
-	list = (char **)ft_calloc(words + 1, sizeof(char *));
-	if (!list)
+	list_address = ft_calloc(words + 1, sizeof(char *));
+	if (!list_address)
+	{
 		return (NULL);
-	if (!fill_split(list, s, c, words))
-		return (NULL);
-	return (list);
+	}
+	if (split_aux(s, c, list_address, words))
+	{
+		free_split(&list_address);
+	}
+	return (list_address);
 }
+// 0        1
+// ["hello", "world"]
+// #include <unistd.h>
+
+// int	main(void)
+// {
+// 	char **splir = ft_split("lorem", ' ');
+// 	int i = 0;
+// 	while (i < 1)
+// 	{
+// 		char *ptr = splir[i]; //"wold"
+// 		// ft_putstr_fd(splir[i], 1)
+// 		while (*ptr)
+// 		{
+// 			write(1, ptr++, 1);
+// 		}
+// 		write(1, "\n", 1);
+// 		i++;
+// 	}
+// 	free_split(&splir);
+// }
